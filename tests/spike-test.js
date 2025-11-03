@@ -1,10 +1,11 @@
 import http from "k6/http";
 import { sleep } from "k6";
 
-//these determine the load test configuration
 export const options = {
-  vus: 1,
-  duration: "10s",
+  stages: [
+    { duration: "10s", target: 100 }, // ramp up to 100 users
+    { duration: "5s", target: 0 }, // ramp down to 0 users
+  ],
 };
 
 export default function () {

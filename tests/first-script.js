@@ -1,7 +1,6 @@
 import http from "k6/http";
 import { sleep } from "k6";
 
-//these determine the load test configuration
 export const options = {
   vus: 10,
   duration: "10s",
