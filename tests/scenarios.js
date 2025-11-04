@@ -7,6 +7,7 @@ export const options = {
   thresholds: {
     http_req_duration: ["p(95)<120"], // 95% of requests must complete below 120ms
     http_req_failed: ["rate<0.01"], // no failed requests
+    http_reqs: ["count>10", "rate>5"], // less than 10 requests and more than 5 requests per second
   },
 };
 
